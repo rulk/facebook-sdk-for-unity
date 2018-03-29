@@ -335,5 +335,28 @@ namespace Facebook.Unity.Mobile.Android
                 this.androidImpl.CallFB(this.MethodName, paramsCopy.ToJsonString());
             }
         }
+
+        public override void SetUserId(string userId)
+        {
+            MethodArguments args = new MethodArguments();
+            args.AddString("userId", userId);
+            var setUserIdCall = new JavaMethodCall<IResult>(this, "SetUserId");
+            setUserIdCall.Call(args);
+        }
+
+        public override void ClearUserId()
+        {
+            MethodArguments args = new MethodArguments();
+            var appEventcall = new JavaMethodCall<IResult>(this, "ClearUserId");
+            appEventcall.Call(args);
+        }
+
+        public override void UpdateUserProperties(Dictionary<string, object> properties)
+        {
+            MethodArguments args = new MethodArguments();
+            args.AddDictionary("properties", properties);
+            var updateUserPropertiesCall = new JavaMethodCall<IResult>(this, "UpdateUserProperties");
+            updateUserPropertiesCall.Call(args);
+        }
     }
 }

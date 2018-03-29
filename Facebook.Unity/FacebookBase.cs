@@ -174,6 +174,10 @@ namespace Facebook.Unity
             string currency,
             Dictionary<string, object> parameters);
 
+        public abstract void SetUserId(string userId);
+        public abstract void ClearUserId();
+        public abstract void UpdateUserProperties(Dictionary<string, object> properties);
+
         public virtual void OnInitComplete(ResultContainer resultContainer)
         {
             this.Initialized = true;

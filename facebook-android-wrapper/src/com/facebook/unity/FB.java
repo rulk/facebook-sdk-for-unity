@@ -245,7 +245,37 @@ public class FB {
             Log.e(TAG, "couldn't logPurchase or logEvent params: " + params_str);
         }
     }
+    
+    @UnityCallable
+    public static void SetUserId(String params_str){
+         Log.v(TAG, "SetUserId(" + params_str + ")");
+         UnityParams unity_params = UnityParams.parse(params_str);
+         if (unity_params.hasString("userId")) {
+              FB.getAppEventsLogger().setUserID(unity_params.getString("userId"));
+         }
+    }
 
+    @UnityCallable
+    public static void ClearUserId(String params_str){
+         Log.v(TAG, "ClearUserId(" + params_str + ")");
+         FB.getAppEventsLogger().clearUserID(unity_params.getString("userId"));
+         
+    }
+    
+    @UnityCallable
+    public static void UpdateUserProperties(String params_str){
+         Log.v(TAG, "UpdateUserProperties(" + params_str + ")");
+         UnityParams unity_params = UnityParams.parse(params_str);
+         Bundle parameters = new Bundle();
+        
+         if (unity_params.has("properties")) {
+            UnityParams unity_params_parameter = unity_params.getParamsObject("properties");
+            parameters = unity_params_parameter.getStringParams();
+             
+            FB.getAppEventsLogger().updateUserProperties(parameters, null);
+         }
+    }
+    
     @UnityCallable
     public static boolean IsImplicitPurchaseLoggingEnabled() {
       return AutomaticAnalyticsLogger.isImplicitPurchaseLoggingEnabled();

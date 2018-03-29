@@ -204,6 +204,18 @@ namespace Facebook.Unity.IOS
             IOSWrapper.IOSFBRefreshCurrentAccessToken(requestId);
         }
 
+        public void SetUserId(string userId)
+        {
+            IOSWrapper.IOSFBSetUserId(userId);
+        }
+
+        public void UpdateUserProperties(int numParams,
+            string[] paramKeys,
+            string[] paramVals)
+        {
+            IOSWrapper.IOSFBUpdateUserProperties(numParams,paramKeys,paramVals);
+        }
+
         [DllImport("__Internal")]
         private static extern void IOSFBInit(
             string appId,
@@ -301,5 +313,14 @@ namespace Facebook.Unity.IOS
 
         [DllImport("__Internal")]
         private static extern void IOSFBRefreshCurrentAccessToken(int requestID);
+        
+        [DllImport("__Internal")]
+        private static extern void IOSFBSetUserId(string userId);
+        
+        [DllImport("__Internal")]
+        private static extern void IOSFBUpdateUserProperties(
+            int numParams,
+            string[] paramKeys,
+            string[] paramVals);
     }
 }

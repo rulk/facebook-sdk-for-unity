@@ -113,5 +113,11 @@ namespace Facebook.Unity
             float logPurchase,
             string currency,
             Dictionary<string, object> parameters);
+
+
+        void SetUserId(string userId);
+        void ClearUserId();
+        void UpdateUserProperties(Dictionary<string, object> properties);
+        
     }
 }

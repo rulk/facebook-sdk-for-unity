@@ -102,5 +102,11 @@ namespace Facebook.Unity.Mobile.IOS
         string FBSdkVersion();
 
         void FetchDeferredAppLink(int requestId);
+
+        void SetUserId(string userId);
+
+        void UpdateUserProperties(int numParams,
+            string[] paramKeys,
+            string[] paramVals);
     }
 }

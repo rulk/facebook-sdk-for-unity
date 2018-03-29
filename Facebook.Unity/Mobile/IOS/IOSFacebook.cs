@@ -253,6 +253,22 @@ namespace Facebook.Unity.Mobile.IOS
             this.iosWrapper.LogPurchaseAppEvent(logPurchase, currency, dict.NumEntries, dict.Keys, dict.Values);
         }
 
+        public override void SetUserId(string userId)
+        {
+            this.iosWrapper.SetUserId(userId);
+        }
+
+        public override void ClearUserId()
+        {
+            this.iosWrapper.SetUserId(string.Empty);
+        }
+
+        public override void UpdateUserProperties(Dictionary<string, object> properties)
+        {
+            NativeDict dict = MarshallDict(properties);
+            this.iosWrapper.UpdateUserProperties(dict.NumEntries, dict.Keys, dict.Values);
+        }
+
         public override bool IsImplicitPurchaseLoggingEnabled()
         {
             return false;

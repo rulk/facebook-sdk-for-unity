@@ -633,6 +633,21 @@ namespace Facebook.Unity
             FacebookImpl.AppEventsLogEvent(logEvent, valueToSum, parameters);
         }
 
+        public static void SetUserId(string userId)
+        {
+            FacebookImpl.SetUserId(userId);
+        }
+
+        public static void ClearUserId()
+        {
+            FacebookImpl.ClearUserId();
+        }
+
+        public static void UpdateUserProperties(Dictionary<string, object> userProperties)
+        {
+            FacebookImpl.UpdateUserProperties(userProperties);
+        }
+
         /// <summary>
         /// Logs the purchase.
         /// </summary>

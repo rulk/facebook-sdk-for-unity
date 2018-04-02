@@ -258,7 +258,7 @@ public class FB {
     @UnityCallable
     public static void ClearUserId(String params_str){
          Log.v(TAG, "ClearUserId(" + params_str + ")");
-         FB.getAppEventsLogger().clearUserID(unity_params.getString("userId"));
+         FB.getAppEventsLogger().clearUserID();
          
     }
     

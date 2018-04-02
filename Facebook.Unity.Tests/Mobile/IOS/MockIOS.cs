@@ -183,6 +183,16 @@ namespace Facebook.Unity.Tests.Mobile.IOS
             this.LogMethodCall();
         }
 
+        public void SetUserId(string userId)
+        {
+            this.LogMethodCall();
+        }
+
+        public void UpdateUserProperties(int numParams, string[] paramKeys, string[] paramVals)
+        {
+            this.LogMethodCall();
+        }
+
         public void RefreshCurrentAccessToken(int requestID)
         {
             var result = MockResults.GetLoginResult(

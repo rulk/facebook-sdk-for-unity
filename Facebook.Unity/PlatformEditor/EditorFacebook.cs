@@ -175,6 +175,19 @@ namespace Facebook.Unity.Editor
             FacebookLogger.Log("Pew! Pretending to send this off.  Doesn't actually work in the editor");
         }
 
+        public override void SetUserId(string userId)
+        {
+            
+        }
+
+        public override void ClearUserId()
+        {
+        }
+
+        public override void UpdateUserProperties(Dictionary<string, object> properties)
+        {
+        }
+
         public bool IsImplicitPurchaseLoggingEnabled()
         {
             return true;

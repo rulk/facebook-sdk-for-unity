@@ -358,6 +358,19 @@ namespace Facebook.Unity.Canvas
                 MiniJSON.Json.Serialize(parameters));
         }
 
+        public override void SetUserId(string userId)
+        {
+            
+        }
+
+        public override void ClearUserId()
+        {
+        }
+
+        public override void UpdateUserProperties(Dictionary<string, object> properties)
+        {
+        }
+
         public override void OnLoginComplete(ResultContainer result)
         {
             CanvasFacebook.FormatAuthResponse(

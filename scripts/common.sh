@@ -56,9 +56,9 @@ FACEBOOK_BASE_URL='https://origincache.facebook.com/developers/resources/?id=%s-
 UNITY_JAR_RESOLVER_NAME='unity-jar-resolver'
 UNITY_JAR_RESOLVER_PACKAGE_NAME='play-services-resolver'
 UNITY_JAR_RESOLVER_BASE_URL="https://github.com/googlesamples/$UNITY_JAR_RESOLVER_NAME/raw/master/"
-UNITY_JAR_RESOLVER_VERSION='1.2.61.0'
+UNITY_JAR_RESOLVER_VERSION='1.2.64.0'
 UNITY_JAR_RESOLVER_URL="$UNITY_JAR_RESOLVER_BASE_URL$UNITY_JAR_RESOLVER_PACKAGE_NAME-$UNITY_JAR_RESOLVER_VERSION.unitypackage"
-
+echo $UNITY_JAR_RESOLVER_URL
 FB_SDK_MODULES=(
   'facebook-applinks'
   'facebook-common'

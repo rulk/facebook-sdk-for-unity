@@ -527,15 +527,15 @@ extern "C" {
   }
     void IOSFBSetUserId(const char *userId)
     {
-        [FBSDKAppEvents setUseID: userID: [FBUnityUtility stringFromCString:userId]];
+        [FBSDKAppEvents setUserID: [FBUnityUtility stringFromCString:userId]];
     }
     
     void IOSFBUpdateUserProperties(int numParams,
-                                const char **paramKeys,
-                                const char **paramVals)
+                                   const char **paramKeys,
+                                   const char **paramVals)
     {
         NSDictionary *params =  [FBUnityUtility dictionaryFromKeys:paramKeys values:paramVals length:numParams];
-        [FBSDKAppEvents updateUserProperties: params];
+        [FBSDKAppEvents updateUserProperties:params handler:nil];
     }
     
 }
